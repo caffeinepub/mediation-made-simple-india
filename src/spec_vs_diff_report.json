@@ -1,0 +1,44 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-13T07:31:04.063Z",
+  "summary": "Frontend Dispute Guidance page now shows a disclaimer and the category-selection workflow without tabs, and the category selector UI appears updated to render expanded, sectioned guidance. However, the backend diff excerpt still shows category structures that don’t clearly provide the required expanded, structured guidance fields, and it introduces additional dispute categories beyond the required fixed set.",
+  "missing_requirements": [
+    {
+      "id": "REQ-14",
+      "requirement": "Update backend dispute guidance structures and logic so the category-based guidance API can deliver the expanded guidance fields needed by the frontend, with category-specific tailored content (not the current generic step list).",
+      "reason": "The backend excerpt shows `DisputeCategory` containing only `title`, `description`, `isMediationSuitable`, `mediationReason`, and `legalAdvice`. It does not show structured fields sufficient to render examples/next steps/do’s/don’ts/legal-information notes, nor does it show updated `getGuidanceByCategory` logic/response to support the frontend’s new sections.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "requirement": "Expand the guidance content returned for each of the six fixed dispute categories to include realistic examples, suitability guidance with caveats, clear next steps, practical do’s and don’ts, and India-focused legal-information notes (informational, not legal advice).",
+      "reason": "The frontend expects expanded content sections (e.g., examples) from the guidance result (`result.fullDispute.contextSpecificExamples...`), but the backend excerpt does not show these expanded, category-tailored content fields being returned for the six required categories.",
+      "evidence": [
+        "frontend/src/components/DisputeCategorySelector.tsx",
+        "backend/main.mo"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Introduced additional dispute categories (e.g., divorce, money) beyond the existing fixed set required by the category selector.",
+      "reason": "The BuildRequest explicitly states not to add new dispute categories beyond the existing fixed set of six (family, business, employment, property/landlord-tenant, consumer, neighborhood). The backend enum includes `#divorce` and `#money` in addition to the expected ones (and `#property` rather than explicitly landlord-tenant).",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    }
+  ],
+  "confidence": 0.62,
+  "changed_files": [
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/src/components/DisputeCategorySelector.tsx",
+    "frontend/src/components/DisputeChatbotPanel.tsx",
+    "frontend/src/hooks/useGuidance.ts",
+    "frontend/src/pages/DisputeGuidancePage.tsx",
+    "project_state.json"
+  ]
+}

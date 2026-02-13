@@ -1,0 +1,189 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "Build a clean, professional, minimalistic informational website titled “Mediation Made Simple – India” to promote public legal awareness of mediation in India, with role-based separate pages and interactive guidance tools.",
+  "architectural_notes": [
+    "No external LLM/API integration; implement chatbot as a rule-based guidance engine using fixed dispute categories.",
+    "Role-based content should be implemented as separate pages (common person, lawyer, mediator, student, judge).",
+    "Recent Developments should support both public display of links/updates and an add/edit mechanism.",
+    "Remove the free-text “describe your dispute” chatbot-style guidance; keep only the fixed category-selection guidance tool and expand its per-category content."
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-create-a-clean-professional-minimalistic-public-website-titled-mediation-made-simple-india-with-a-homepage-that-includes-a-a-brief-introduction-to-mediation-b-the-tagline-not-every-dispute-needs-a-courtroom-and-c-prominent-role-based-navigation-buttons-linking-to-separate-pages-for-common-person-lawyer-mediator-student-and-judge",
+      "title": "Create a clean, professional, minimalistic public website titled “Mediation Made Simple – India” with a homepage that includes: (a) a brief introduction to mediation, (b) the tagline “Not every dispute needs a courtroom”, and (c) prominent role-based navigation buttons linking to separate pages for: common person, lawyer, mediator, student, and judge.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-core-informational-content-sections-with-user-facing-text-in-english-covering-what-mediation-is-its-evolution-application-in-india-and-benefits-and-provide-a-professional-but-approachable-tone-that-avoids-heavy-legal-jargon-while-maintaining-legal-accuracy",
+      "title": "Add core informational content sections (with user-facing text in English) covering: what mediation is, its evolution, application in India, and benefits; and provide a professional-but-approachable tone that avoids heavy legal jargon while maintaining legal accuracy.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-mediation-process-section-with-a-toggle-for-two-content-modes-1-simple-language-for-general-users-and-2-a-more-detailed-legal-explanation-for-professionals",
+      "title": "Implement a “Mediation process” section with a toggle for two content modes: (1) simple language for general users and (2) a more detailed legal explanation for professionals.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-comparison-table-that-contrasts-mediation-vs-litigation-vs-arbitration-vs-negotiation-in-a-clear-accessible-mobile-friendly-layout",
+      "title": "Add a comparison table that contrasts Mediation vs Litigation vs Arbitration vs Negotiation in a clear, accessible, mobile-friendly layout.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-separate-role-based-pages-for-common-person-lawyer-mediator-student-and-judge-each-explaining-relevant-roles-duties-and-rights-including-the-parties-role-in-the-mediation-context",
+      "title": "Create separate role-based pages for common person, lawyer, mediator, student, and judge, each explaining relevant roles, duties, and rights (including the parties’ role) in the mediation context.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-an-interactive-my-dispute-what-should-i-do-guidance-section-where-users-select-one-dispute-category-from-a-fixed-list-and-receive-tailored-rule-based-guidance-on-whether-mediation-is-suitable-and-what-to-do-next",
+      "title": "Build an interactive “My Dispute – What Should I Do?” guidance section where users select one dispute category from a fixed list and receive tailored, rule-based guidance on whether mediation is suitable and what to do next.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-chatbot-style-rule-based-guidance-input-that-lets-a-user-describe-their-dispute-in-free-text-and-receive-a-tailored-response-based-on-the-same-fixed-dispute-categories-using-keyword-rule-matching-including-a-confidence-best-match-category-label-and-a-suggestion-to-choose-a-category-manually-if-uncertain",
+      "title": "Add a chatbot-style rule-based guidance input that lets a user describe their dispute in free text and receive a tailored response based on the same fixed dispute categories (using keyword/rule matching), including a confidence/“best match” category label and a suggestion to choose a category manually if uncertain.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-recent-developments-in-mediation-in-india-section-that-is-visually-appealing-and-displays-a-list-of-updates-with-external-links-include-functionality-to-add-and-edit-updates-title-date-short-description-url",
+      "title": "Create a “Recent Developments in Mediation in India” section that is visually appealing and displays a list of updates with external links; include functionality to add and edit updates (title, date, short description, URL).",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-protect-the-add-edit-recent-developments-functionality-behind-internet-identity-login-while-keeping-the-public-website-content-readable-without-login",
+      "title": "Protect the add/edit “Recent Developments” functionality behind Internet Identity login, while keeping the public website content readable without login.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-coherent-visual-theme-across-the-site-neutral-minimal-modern-editorial-style-using-warm-off-white-backgrounds-charcoal-ink-text-and-a-single-muted-accent-color-not-blue-purple-with-accessible-typography-and-consistent-spacing",
+      "title": "Apply a coherent visual theme across the site: neutral, minimal, modern editorial style using warm off-white backgrounds, charcoal/ink text, and a single muted accent color (not blue/purple), with accessible typography and consistent spacing.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-baseline-accessibility-and-mobile-friendliness-across-all-pages-keyboard-navigability-visible-focus-states-sufficient-color-contrast-and-responsive-layouts-for-common-breakpoints",
+      "title": "Implement baseline accessibility and mobile friendliness across all pages: keyboard navigability, visible focus states, sufficient color contrast, and responsive layouts for common breakpoints.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-the-free-text-describe-your-dispute-chatbot-experience-from-the-my-dispute-what-should-i-do-page-while-keeping-the-category-selection-experience-as-the-only-guidance-workflow",
+      "title": "Remove the free-text “Describe Your Dispute” chatbot experience from the “My Dispute – What Should I Do?” page, while keeping the category-selection experience as the only guidance workflow.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-expand-the-guidance-content-returned-for-each-of-the-six-fixed-dispute-categories-in-the-category-selection-tool-to-include-substantially-more-specific-dispute-type-tailored-information-a-realistic-examples-b-mediation-suitability-guidance-including-when-it-may-not-be-suitable-c-clear-next-steps-d-practical-do-s-and-don-ts-and-e-legal-information-notes-written-in-plain-english-for-india-focused-context-informational-not-legal-advice",
+      "title": "Expand the guidance content returned for each of the six fixed dispute categories in the category-selection tool to include substantially more specific, dispute-type-tailored information: (a) realistic examples, (b) mediation suitability guidance including when it may not be suitable, (c) clear next steps, (d) practical do’s and don’ts, and (e) legal-information notes written in plain English for India-focused context (informational, not legal advice).",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-category-selection-ui-to-present-the-new-expanded-guidance-sections-in-a-clear-scannable-layout-that-remains-mobile-friendly-and-accessible-e-g-headings-lists-and-consistent-spacing",
+      "title": "Update the category-selection UI to present the new expanded guidance sections in a clear, scannable layout that remains mobile-friendly and accessible (e.g., headings, lists, and consistent spacing).",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create minimalistic, mobile-friendly informational website “Mediation Made Simple – India” with homepage intro, tagline, and role-based navigation",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Add content sections: what mediation is (evolution, application in India, benefits) and mediation process with dual modes (simple vs detailed legal)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Add comparison table: Mediation vs Litigation vs Arbitration vs Negotiation",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Add sections describing roles/duties/rights of lawyers, mediators, referral judges, and parties",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Implement “My Dispute – What Should I Do?” interactive tool with fixed dispute categories and tailored guidance output",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Add “Recent Developments in Mediation in India” section with visually appealing static links plus ability to add/edit updates",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Create separate role-based pages for common person, lawyer, mediator, student, and judge",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Expand “My Dispute – What Should I Do?” category outputs with more tailored content per each of the six fixed dispute categories (examples, mediation suitability, next steps, legal info, do’s/don’ts) while keeping the category-selection UX",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Update backend dispute guidance structures and logic so the category-based guidance API can deliver the expanded guidance fields needed by the frontend, with category-specific tailored content (not the current generic step list).",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Mediation Made Simple – India",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

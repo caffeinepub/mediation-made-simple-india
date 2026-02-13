@@ -1,0 +1,105 @@
+{
+  "kind": "build_request",
+  "title": "Refine “My Dispute – What Should I Do?”: remove free-text chatbot and expand category guidance",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-12",
+      "text": "Remove the free-text “Describe Your Dispute” chatbot experience from the “My Dispute – What Should I Do?” page, while keeping the category-selection experience as the only guidance workflow.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "remove the free text chatbot, but keep the other part which lets the user select the type of dispute"
+        ]
+      },
+      "acceptanceCriteria": [
+        "On the Dispute Guidance page, users no longer see a “Describe Your Dispute” tab/section or any textarea-based free-text input.",
+        "The Dispute Guidance page only presents the dispute category selection workflow (no tabs needed unless additional non-chatbot modes remain).",
+        "No build errors from removed imports/references (e.g., DisputeChatbotPanel no longer imported/used)."
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "text": "Expand the guidance content returned for each of the six fixed dispute categories in the category-selection tool to include substantially more specific, dispute-type-tailored information: (a) realistic examples, (b) mediation suitability guidance including when it may not be suitable, (c) clear next steps, (d) practical do’s and don’ts, and (e) legal-information notes written in plain English for India-focused context (informational, not legal advice).",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "add some more content for each of the six categories",
+          "as much as specific info you can give to suit to the specific types of disputes examples, mediation suitability, next steps, legal info, do’s/don’t"
+        ]
+      },
+      "acceptanceCriteria": [
+        "For each of the six selectable categories (family, business, employment, property/landlord-tenant, consumer, neighborhood), the displayed guidance includes: examples, suitability notes (including caveats), next steps, do’s, don’ts, and legal-information notes.",
+        "The content is written in English, uses a professional but approachable tone, avoids heavy legal jargon, and includes a clear informational/not-legal-advice framing consistent with the existing page disclaimer.",
+        "The category-selection workflow continues to work end-to-end (select category → fetch guidance → display expanded content) without regressions."
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "text": "Update backend dispute guidance structures and logic so the category-based guidance API can deliver the expanded guidance fields needed by the frontend, with category-specific tailored content (not the current generic step list).",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "make content additions in it"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The backend’s category-based guidance response includes structured fields sufficient to render: examples, next steps, do’s, don’ts, and legal-information notes (in addition to suitability + reason).",
+        "Guidance steps/next-steps are category-specific (not the same list for every category).",
+        "No state migration is introduced unless strictly necessary; static category/guidance data changes do not require stable-state migration."
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "text": "Update the category-selection UI to present the new expanded guidance sections in a clear, scannable layout that remains mobile-friendly and accessible (e.g., headings, lists, and consistent spacing).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "add some more content for each of the six categories"
+        ]
+      },
+      "acceptanceCriteria": [
+        "After selecting a category, the results area renders distinct sections for: Examples, Is mediation suitable?, Recommended next steps, Do’s, Don’ts, and Legal information (wording may vary but meaning must match).",
+        "Lists are rendered as semantic lists (ul/ol) where appropriate and are readable on small screens without horizontal scrolling.",
+        "The existing disclaimer remains visible on the page and continues to state the tool is not legal advice."
+      ]
+    }
+  ],
+  "constraints": [
+    "Frontend must not modify files under frontend/src/components/ui (shadcn components); compose them instead.",
+    "Do not edit immutable frontend hook files listed in SYSTEM_CONTEXT (e.g., frontend/src/hooks/useInternetIdentity.ts(x), frontend/src/hooks/useActor.ts, frontend/src/main.tsx).",
+    "Backend must remain a single Motoko actor with all logic in backend/main.mo; only add backend/migration.mo if an upgrade of stable state is required."
+  ],
+  "nonGoals": [
+    "Do not add new dispute categories beyond the existing fixed set used by the category selector.",
+    "Do not introduce any AI/LLM integration or third-party services for dispute analysis.",
+    "Do not change Internet Identity authentication behavior (this change is limited to the dispute guidance tool).",
+    "Do not add real-time features (e.g., chat, websockets)."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}
