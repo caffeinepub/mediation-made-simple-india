@@ -1,68 +1,22 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Dispute Guidance page: remove free-text flow and expand category guidance rendering",
+  "title": "Subtle creator credit in global footer",
   "requirements": [
     {
-      "id": "REQ-12",
-      "summary": "Remove the free-text “Describe Your Dispute” chatbot UI and keep category selection as the only workflow on the Dispute Guidance page.",
+      "id": "REQ-16",
+      "summary": "Add a muted “Created by Gauri Jadhav” credit in the global footer alongside the existing caffeine.ai credit without altering the caffeine.ai link.",
       "acceptanceCriteria": [
-        "On the Dispute Guidance page, users no longer see a “Describe Your Dispute” tab/section or any textarea-based free-text input.",
-        "The Dispute Guidance page only presents the dispute category selection workflow (no tabs needed unless additional non-chatbot modes remain).",
-        "No build errors from removed imports/references (e.g., DisputeChatbotPanel no longer imported/used)."
+        "On all pages, the footer displays the exact text “Created by Gauri Jadhav”.",
+        "The creator credit is visually subtle (e.g., same muted/secondary text style as existing footer text) and does not dominate the footer.",
+        "The existing “Built with … using caffeine.ai” credit and its link remain present and functional (no removal/regression).",
+        "Footer layout remains responsive: on mobile and desktop, footer content does not overflow and maintains readable spacing/alignment."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/pages/DisputeGuidancePage.tsx",
+          "path": "frontend/src/components/SiteLayout.tsx",
           "operation": "modify",
-          "description": "Remove Tabs-based UI and all imports/references to the free-text workflow; render only the category-selection workflow (DisputeCategorySelector) while keeping the existing header and disclaimer visible."
-        },
-        {
-          "path": "frontend/src/components/DisputeChatbotPanel.tsx",
-          "operation": "delete",
-          "description": "Delete the free-text chatbot panel component to ensure it cannot be rendered or imported after removing it from the Dispute Guidance page."
-        }
-      ]
-    },
-    {
-      "id": "REQ-13",
-      "summary": "Ensure the category-selection workflow displays the expanded, category-specific guidance fields returned by the backend (examples, suitability guidance, next steps, do’s/don’ts, legal-information notes) for each of the six fixed categories.",
-      "acceptanceCriteria": [
-        "For each of the six selectable categories (family, business, employment, property/landlord-tenant, consumer, neighborhood), the displayed guidance includes: examples, suitability notes (including caveats), next steps, do’s, don’ts, and legal-information notes.",
-        "The content is written in English, uses a professional but approachable tone, avoids heavy legal jargon, and includes a clear informational/not-legal-advice framing consistent with the existing page disclaimer.",
-        "The category-selection workflow continues to work end-to-end (select category → fetch guidance → display expanded content) without regressions."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/DisputeCategorySelector.tsx",
-          "operation": "modify",
-          "description": "Refactor result rendering to use the backend GuidanceResult shape (category + fullDispute) and display the expanded fields: contextSpecificExamples, mediationSuitabilityGuidance, nextSteps, dosAndDonts (dos/donts), and legalInformation, while continuing to show category-level suitability (category.isMediationSuitable + category.mediationReason). Ensure no references remain to legacy fields (e.g., steps/additionalAdvice/mediationSuitable) that are not part of the current backend types."
-        },
-        {
-          "path": "frontend/src/hooks/useGuidance.ts",
-          "operation": "modify",
-          "description": "Align hook typings/usages (if needed) to consistently return and consume GuidanceResult as defined in frontend/src/backend.d.ts, and remove any now-unused description-based guidance hook usage references introduced by deleting the chatbot UI (keep exports only if still used elsewhere)."
-        }
-      ]
-    },
-    {
-      "id": "REQ-15",
-      "summary": "Present the expanded guidance in a clear, scannable, mobile-friendly, accessible layout using headings and semantic lists, while keeping the existing not-legal-advice disclaimer visible.",
-      "acceptanceCriteria": [
-        "After selecting a category, the results area renders distinct sections for: Examples, Is mediation suitable?, Recommended next steps, Do’s, Don’ts, and Legal information (wording may vary but meaning must match).",
-        "Lists are rendered as semantic lists (ul/ol) where appropriate and are readable on small screens without horizontal scrolling.",
-        "The existing disclaimer remains visible on the page and continues to state the tool is not legal advice."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/DisputeCategorySelector.tsx",
-          "operation": "modify",
-          "description": "Update the results UI to a sectioned, scannable layout: use clear headings, consistent spacing, and semantic lists (ul/ol) for examples/next steps/do’s/don’ts; ensure responsive typography and spacing for mobile (no horizontal scrolling) and maintain accessible structure (e.g., heading order, list semantics)."
-        },
-        {
-          "path": "frontend/src/pages/DisputeGuidancePage.tsx",
-          "operation": "modify",
-          "description": "Verify the disclaimer card remains visible on the page after removing tabs/chatbot, and ensure the category-selection results area appears beneath it in a readable, mobile-friendly layout."
+          "description": "Update the existing footer markup to include the additional text node “Created by Gauri Jadhav” placed alongside the existing caffeine.ai credit, using the same subtle/muted text styling and responsive flex/wrap spacing. Ensure the caffeine.ai href (including tracking parameters) remains unchanged and functional."
         }
       ]
     }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 5,
+  "projectStateVersion": 7,
   "summary": "Build a clean, professional, minimalistic informational website titled “Mediation Made Simple – India” to promote public legal awareness of mediation in India, with role-based separate pages and interactive guidance tools.",
   "architectural_notes": [
     "No external LLM/API integration; implement chatbot as a rule-based guidance engine using fixed dispute categories.",
@@ -122,6 +122,14 @@
         "REQ-15"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-add-a-subtly-styled-footer-credit-reading-created-by-gauri-jadhav-in-the-global-site-footer-placed-alongside-the-existing-caffeine-ai-credit-without-removing-or-changing-the-existing-caffeine-ai-link",
+      "title": "Add a subtly styled footer credit reading “Created by Gauri Jadhav” in the global site footer, placed alongside the existing caffeine.ai credit (without removing or changing the existing caffeine.ai link).",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -179,6 +187,12 @@
       "reqIds": [
         "REQ-14"
       ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-13",
+      "summary": "Add subtly styled footer credit: “Created by Gauri Jadhav” alongside existing Caffeine AI credit",
+      "reqIds": [],
       "status": "pending"
     }
   ],

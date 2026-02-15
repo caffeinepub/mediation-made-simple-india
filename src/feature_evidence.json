@@ -2,11 +2,10 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-remove-the-free-text-describe-your-dispute-chatbot-experience-from-the-my-dispute-what-should-i-do-page-while-keeping-the-category-selection-experience-as-the-only-guidance-workflow",
-      "featureTitle": "Remove the free-text “Describe Your Dispute” chatbot experience from the “My Dispute – What Should I Do?” page, while keeping the category-selection experience as the only guidance workflow.",
+      "featureId": "feature-add-a-subtly-styled-footer-credit-reading-created-by-gauri-jadhav-in-the-global-site-footer-placed-alongside-the-existing-caffeine-ai-credit-without-removing-or-changing-the-existing-caffeine-ai-link",
+      "featureTitle": "Add a subtly styled footer credit reading “Created by Gauri Jadhav” in the global site footer, placed alongside the existing caffeine.ai credit (without removing or changing the existing caffeine.ai link).",
       "files": [
-        "frontend/src/components/DisputeChatbotPanel.tsx",
-        "frontend/src/pages/DisputeGuidancePage.tsx"
+        "frontend/src/components/SiteLayout.tsx"
       ],
       "components": [
         "authorization@4.0.0",
@@ -17,47 +16,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-12"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-expand-the-guidance-content-returned-for-each-of-the-six-fixed-dispute-categories-in-the-category-selection-tool-to-include-substantially-more-specific-dispute-type-tailored-information-a-realistic-examples-b-mediation-suitability-guidance-including-when-it-may-not-be-suitable-c-clear-next-steps-d-practical-do-s-and-don-ts-and-e-legal-information-notes-written-in-plain-english-for-india-focused-context-informational-not-legal-advice",
-      "featureTitle": "Expand the guidance content returned for each of the six fixed dispute categories in the category-selection tool to include substantially more specific, dispute-type-tailored information: (a) realistic examples, (b) mediation suitability guidance including when it may not be suitable, (c) clear next steps, (d) practical do’s and don’ts, and (e) legal-information notes written in plain English for India-focused context (informational, not legal advice).",
-      "files": [
-        "frontend/src/components/DisputeCategorySelector.tsx",
-        "frontend/src/hooks/useGuidance.ts"
-      ],
-      "components": [
-        "authorization@4.0.0",
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-13"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-update-the-category-selection-ui-to-present-the-new-expanded-guidance-sections-in-a-clear-scannable-layout-that-remains-mobile-friendly-and-accessible-e-g-headings-lists-and-consistent-spacing",
-      "featureTitle": "Update the category-selection UI to present the new expanded guidance sections in a clear, scannable layout that remains mobile-friendly and accessible (e.g., headings, lists, and consistent spacing).",
-      "files": [
-        "frontend/src/components/DisputeCategorySelector.tsx",
-        "frontend/src/pages/DisputeGuidancePage.tsx"
-      ],
-      "components": [
-        "authorization@4.0.0",
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-15"
+        "REQ-16"
       ],
       "confidence": "high"
     }

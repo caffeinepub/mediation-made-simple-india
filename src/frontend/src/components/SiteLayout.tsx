@@ -116,16 +116,20 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
               <span>© {new Date().getFullYear()} Mediation Made Simple – India</span>
             </div>
             
-            <div className="text-sm text-muted-foreground">
-              Built with ❤️ using{' '}
-              <a
-                href={`https://caffeine.ai/?utm_source=Caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(window.location.hostname)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-accent hover:underline font-medium"
-              >
-                caffeine.ai
-              </a>
+            <div className="flex flex-col sm:flex-row items-center gap-3 text-sm text-muted-foreground">
+              <span className="text-muted-foreground/80">Created by Gauri Jadhav</span>
+              <span className="hidden sm:inline text-muted-foreground/50">•</span>
+              <div>
+                Built with ❤️ using{' '}
+                <a
+                  href={`https://caffeine.ai/?utm_source=Caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(window.location.hostname)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent hover:underline font-medium"
+                >
+                  caffeine.ai
+                </a>
+              </div>
             </div>
           </div>
         </div>

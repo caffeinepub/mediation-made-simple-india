@@ -1,6 +1,6 @@
 {
   "frontend/src/App.tsx": "Main application component with TanStack Router setup, defining all routes (home, about, process, comparison, guidance, developments, and 5 role pages) and wrapping the app with ThemeProvider and Toaster.",
-  "frontend/src/components/SiteLayout.tsx": "Shared layout component providing responsive header with logo/navigation/auth, main content area with Outlet, and footer with attribution; includes mobile menu toggle and profile display.",
+  "frontend/src/components/SiteLayout.tsx": "Shared layout component providing responsive header with logo/navigation/auth, main content area with Outlet, and footer with creator credit \"Created by Gauri Jadhav\" alongside Caffeine AI attribution; includes mobile menu toggle and profile display.",
   "frontend/src/components/auth/LoginButton.tsx": "Reusable login/logout button component using Internet Identity; handles authentication state and clears query cache on logout.",
   "frontend/src/components/auth/ProfileSetupDialog.tsx": "Modal dialog that prompts authenticated users without a profile to enter their name on first login; prevents flash by checking isFetched state.",
   "frontend/src/pages/HomePage.tsx": "Homepage featuring hero section with tagline \"Not every dispute needs a courtroom\", 5 role-based navigation cards, and quick links to key sections.",
